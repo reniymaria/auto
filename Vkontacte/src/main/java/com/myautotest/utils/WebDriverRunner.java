@@ -20,7 +20,7 @@ public class WebDriverRunner {
     }
 
     public static FirefoxDriver getDriver() {
-
+        //если объекта драйвера нет, то создаем его. если есть - возвращаем этим методом существующий
         if (driver == null) {
             new WebDriverRunner();
         }

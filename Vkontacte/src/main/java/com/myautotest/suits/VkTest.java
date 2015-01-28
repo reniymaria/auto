@@ -14,15 +14,15 @@ public class VkTest {
     public static final String LOGIN_NAME="Vesta Li";
 
 
-  /**  @Test(description = "Verify text")
+   @Test(description = "Verify text")
     public void checkText(){
 
         VkStartScreen vkStartScreen = new VkStartScreen();
         Assert.assertEquals(vkStartScreen.getMainPageText(), MAIN_PAGE_HEADER_TEXT,
                 "Header text not match with expected value");
     }
-*/
-    @Test(description = "Verify text after login")
+
+    @Test(description = "Verify text after login", dependsOnMethods = "checkText")
     public void checkLoginPage(){
         VkStartScreen vkStartScreen = new VkStartScreen();
         vkStartScreen.loginToVkontacte();
