@@ -22,16 +22,16 @@ public class VkStartScreen extends MainScreenVk {
 
     public String getMainPageText () {
             log.info(String.format("Enter XPATH of main page: %s", MAIN_PAGE_TEXT_XPATH));
-            String resultText = driver.findElementByXPath(MAIN_PAGE_TEXT_XPATH).getText();
-            //String resultText = driver.getTextByXpath(MAIN_PAGE_TEXT_XPATH);
+            //String resultText = driver.findElementByXPath(MAIN_PAGE_TEXT_XPATH).getText();
+            String resultText = driver.getTextByXpath(MAIN_PAGE_TEXT_XPATH);
             return resultText;
         }
 
     private VkStartScreen enterLogin() {
         log.info(String.format("Enter login: %s", LOGIN_NAME_XPATH));
         driver.enterTextByXpath(LOGIN_NAME_XPATH,LOGIN_NAME);
-        WebElement elementLogin = driver.findElement(By.xpath(LOGIN_NAME_XPATH)); // Находим по имени поле для ввода
-        elementLogin.sendKeys(LOGIN_NAME); // Вводим логин
+        //WebElement elementLogin = driver.findElement(By.xpath(LOGIN_NAME_XPATH)); // Находим по имени поле для ввода
+        //elementLogin.sendKeys(LOGIN_NAME); // Вводим логин
         return this;
     }
 

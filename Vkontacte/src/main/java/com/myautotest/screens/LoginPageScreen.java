@@ -13,8 +13,8 @@ public LoginPageScreen(){}
 
 
         log.info(String.format("Enter login name XPATH", LOGIN_NAME_XPATH));
-        //String result = driver.getTextByXpath(LOGIN_NAME_XPATH);
-        String result = driver.findElementByXPath(LOGIN_NAME_XPATH).getText();
+        String result = driver.getTextByXpath(LOGIN_NAME_XPATH);
+        //String result = driver.findElementByXPath(LOGIN_NAME_XPATH).getText();
 
         return result;
 
