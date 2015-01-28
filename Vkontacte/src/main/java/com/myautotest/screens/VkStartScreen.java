@@ -29,7 +29,7 @@ public class VkStartScreen extends MainScreenVk {
 
     private VkStartScreen enterLogin() {
         log.info(String.format("Enter login: %s", LOGIN_NAME_XPATH));
-        //driver.enterTextByXpath(LOGIN_NAME_XPATH,LOGIN_NAME);
+        driver.enterTextByXpath(LOGIN_NAME_XPATH,LOGIN_NAME);
         WebElement elementLogin = driver.findElement(By.xpath(LOGIN_NAME_XPATH)); // Находим по имени поле для ввода
         elementLogin.sendKeys(LOGIN_NAME); // Вводим логин
         return this;

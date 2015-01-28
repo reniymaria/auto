@@ -51,4 +51,5 @@ public class WebDriverWrapper extends FirefoxDriver {
         waitForElementPresentAndVisible(xpath, TIMEOUT_FOR_ACTION_SECONDS);
         findElement(By.xpath(xpath)).sendKeys(text);
     }
-}
+
+    }
