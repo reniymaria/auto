@@ -3,7 +3,10 @@
 <suite name="Suite" thread-count="1" parallel="methods">
     <test name="Test">
         <classes>
-            <class name="com.myautotest.screens.VkStartScreen"/>
+            <class name="com.myautotest.suits.VkTest"/>
         </classes>
     </test> <!-- Test -->
+    <listeners>
+        <listener class-name="com.myautotest.utils.TestngEventsListener"/>
+    </listeners>
 </suite> <!-- Suite -->

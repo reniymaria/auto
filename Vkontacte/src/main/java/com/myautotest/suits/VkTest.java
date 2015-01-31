@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class VkTest {
 
     public static final String MAIN_PAGE_HEADER_TEXT ="Добро пожаловать";
-    public static final String LOGIN_NAME="Vesta Li";
+    public static final String LOGIN_NAME="Vesta Li2";
 
 
    @Test(description = "Verify text")
