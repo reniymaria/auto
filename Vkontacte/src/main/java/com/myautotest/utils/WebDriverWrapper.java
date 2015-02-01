@@ -11,13 +11,18 @@ import org.slf4j.LoggerFactory;
 public class WebDriverWrapper extends FirefoxDriver {
 
     protected final Logger log = LoggerFactory.getLogger(MainScreenVk.class);
-    public static final int TIMEOUT_FOR_ACTION_SECONDS = 5;
+    //public static final int TIMEOUT_FOR_ACTION_SECONDS = 5;
 
     public WebDriverWrapper() {
     }
     public void clickByXpath(String xpath) {
        log.debug("[ACTION]: Click element by xpath: '" + xpath + "'");
-        waitForElementPresentAndVisible(xpath, TIMEOUT_FOR_ACTION_SECONDS);
+        try {
+            waitForElementPresentAndVisible(xpath, PropertiesReader.getInstance().getTimeOut());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         findElement(By.xpath(xpath)).click();
     }
 
@@ -40,7 +45,11 @@ public class WebDriverWrapper extends FirefoxDriver {
 
     public String getTextByXpath(String xpath) {
         log.debug(String.format("[ACTION]: Get element text by xpath: '%s'", xpath));
-        waitForElementPresentAndVisible(xpath, TIMEOUT_FOR_ACTION_SECONDS);
+        try {
+            waitForElementPresentAndVisible(xpath, PropertiesReader.getInstance().getTimeOut());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         String result = findElement(By.xpath(xpath)).getText();
         log.debug(String.format("[ACTION]: Text in founded element is: '%s'", result));
         return result;
@@ -48,7 +57,11 @@ public class WebDriverWrapper extends FirefoxDriver {
 
     public void enterTextByXpath(String xpath, String text) {
         log.debug(String.format("[ACTION]: Enter text '%s' in element by xpath: '%s'", text, xpath));
-        waitForElementPresentAndVisible(xpath, TIMEOUT_FOR_ACTION_SECONDS);
+        try {
+            waitForElementPresentAndVisible(xpath, PropertiesReader.getInstance().getTimeOut());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         findElement(By.xpath(xpath)).sendKeys(text);
     }
 
